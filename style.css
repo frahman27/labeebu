@@ -1,39 +1,37 @@
-/* Reset */
+/* Reset and layout */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  height: 100%;
+  background-color: #fdf0f3;
   overflow: hidden;
-  background: #fdf0f3;
+  height: 100%;
 }
 
-/* Animated Popeye background */
-.background-popeye {
+/* Popeye animated gif background */
+.popeye-background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('assets/popeye-olive.gif') repeat;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/resized_book.png') repeat;
   background-size: contain;
-  opacity: 0.1;
+  opacity: 0.08;
   z-index: -3;
-  pointer-events: none;
 }
 
-/* Centered book background */
-.background-book {
+/* Book background image */
+.book-background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
   background: url('assets/book_resized.png') no-repeat center center;
-  background-size: 60%;
+  background-size: contain;
   opacity: 0.05;
+  transform: translate(-50%, -50%);
   z-index: -2;
-  pointer-events: none;
 }
 
 /* Content container */
@@ -43,10 +41,11 @@ body, html {
   align-items: center;
   padding: 3rem;
   text-align: center;
-  z-index: 1;
+  position: relative;
+  z-index: 2;
 }
 
-/* Typewriter heading */
+/* Animated title */
 h1.typewriter {
   font-size: 1.8rem;
   white-space: nowrap;
@@ -65,7 +64,7 @@ h1.typewriter {
   50% { border-color: transparent; }
 }
 
-/* Card styling */
+/* Card with message */
 .card {
   background: #fff;
   border-radius: 15px;
@@ -73,27 +72,23 @@ h1.typewriter {
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   max-width: 400px;
   line-height: 1.5;
-  position: relative;
-  z-index: 1;
 }
 
-/* Book icon inside card */
-.card .icon {
-  width: 60px;
+.icon {
+  width: 70px;
   margin-bottom: 1rem;
 }
 
-/* Flirty line */
 .flirt {
   margin-top: 1rem;
   font-style: italic;
   color: #e55a5a;
 }
 
-/* Animated floating heart */
+/* Floating heart animation */
 .center-heart {
   position: fixed;
-  top: 50%;
+  top: 25%;
   left: 50%;
   width: 60px;
   transform: translate(-50%, -50%);
@@ -102,7 +97,6 @@ h1.typewriter {
 }
 
 @keyframes pulse {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.3); }
-  100% { transform: translate(-50%, -50%) scale(1); }
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
 }
