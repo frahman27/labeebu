@@ -1,7 +1,7 @@
-// Play background music on first click/tap (for Safari/iOS compatibility)
-document.body.addEventListener('click', function () {
+// Enable audio playback on first user interaction
+document.body.addEventListener('click', () => {
   const audio = document.getElementById('bg-music');
-  if (audio.paused) {
+  if (audio && audio.paused) {
     audio.play();
   }
 }, { once: true });
