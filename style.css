@@ -76,3 +76,18 @@ h1.typewriter {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+.center-heart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite ease-in-out;
+  z-index: 10;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
