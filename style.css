@@ -1,3 +1,4 @@
+/* Reset and basic layout */
 body, html {
   margin: 0;
   padding: 0;
@@ -7,18 +8,22 @@ body, html {
   background: #fdf0f3;
 }
 
+/* Book image as faint centered background */
 .background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('assets/popeye-olive.gif') repeat;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: url('assets/book_resized.png') no-repeat center center;
   background-size: contain;
-  opacity: 0.15;
-  z-index: -1;
+  opacity: 0.05;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  pointer-events: none;
 }
 
+/* Main container for content */
 .container {
   display: flex;
   flex-direction: column;
@@ -27,6 +32,7 @@ body, html {
   text-align: center;
 }
 
+/* Typewriter effect for title */
 h1.typewriter {
   font-size: 1.8rem;
   white-space: nowrap;
@@ -45,6 +51,7 @@ h1.typewriter {
   50% { border-color: transparent; }
 }
 
+/* Message card */
 .card {
   background: #fff;
   border-radius: 15px;
@@ -52,30 +59,24 @@ h1.typewriter {
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   max-width: 400px;
   line-height: 1.5;
+  position: relative;
+  z-index: 1;
 }
 
+/* Icon above message */
 .card .icon {
   width: 40px;
   margin-bottom: 1rem;
 }
 
+/* Flirty italic line */
 .flirt {
   margin-top: 1rem;
   font-style: italic;
   color: #e55a5a;
 }
 
-.floating-heart {
-  position: absolute;
-  bottom: 20px;
-  width: 40px;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
+/* Animated floating heart in center */
 .center-heart {
   position: fixed;
   top: 50%;
