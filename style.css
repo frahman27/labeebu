@@ -1,4 +1,4 @@
-/* Reset and basic layout */
+/* Reset */
 body, html {
   margin: 0;
   padding: 0;
@@ -8,31 +8,45 @@ body, html {
   background: #fdf0f3;
 }
 
-/* Book image as faint centered background */
-.background {
+/* Animated Popeye background */
+.background-popeye {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  background: url('assets/book_resized.png') no-repeat center center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('assets/popeye-olive.gif') repeat;
   background-size: contain;
+  opacity: 0.1;
+  z-index: -3;
+  pointer-events: none;
+}
+
+/* Centered book background */
+.background-book {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('assets/book_resized.png') no-repeat center center;
+  background-size: 60%;
   opacity: 0.05;
-  transform: translate(-50%, -50%);
   z-index: -2;
   pointer-events: none;
 }
 
-/* Main container for content */
+/* Content container */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3rem;
   text-align: center;
+  z-index: 1;
 }
 
-/* Typewriter effect for title */
+/* Typewriter heading */
 h1.typewriter {
   font-size: 1.8rem;
   white-space: nowrap;
@@ -51,7 +65,7 @@ h1.typewriter {
   50% { border-color: transparent; }
 }
 
-/* Message card */
+/* Card styling */
 .card {
   background: #fff;
   border-radius: 15px;
@@ -63,20 +77,20 @@ h1.typewriter {
   z-index: 1;
 }
 
-/* Icon above message */
+/* Book icon inside card */
 .card .icon {
-  width: 40px;
+  width: 60px;
   margin-bottom: 1rem;
 }
 
-/* Flirty italic line */
+/* Flirty line */
 .flirt {
   margin-top: 1rem;
   font-style: italic;
   color: #e55a5a;
 }
 
-/* Animated floating heart in center */
+/* Animated floating heart */
 .center-heart {
   position: fixed;
   top: 50%;
@@ -89,6 +103,6 @@ h1.typewriter {
 
 @keyframes pulse {
   0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.2); }
+  50% { transform: translate(-50%, -50%) scale(1.3); }
   100% { transform: translate(-50%, -50%) scale(1); }
 }
