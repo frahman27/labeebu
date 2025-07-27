@@ -25,8 +25,8 @@ body, html {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 1200px;
-  height: 1200px;
+  width: 2000px;
+  height: 2000px;
   background: url('assets/book_resized.png') no-repeat center center;
   background-size: contain;
   opacity: 0.05;
@@ -88,7 +88,7 @@ h1.typewriter {
 /* Floating heart animation */
 .center-heart {
   position: fixed;
-  top: 5%;
+  top: 100%;
   left: 50%;
   width: 60px;
   transform: translate(-50%, -50%);
