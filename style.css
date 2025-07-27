@@ -88,7 +88,7 @@ h1.typewriter {
 /* Floating heart animation */
 .center-heart {
   position: fixed;
-  top: 5%;
+  top: 10%;
   left: 50%;
   width: 60px;
   transform: translate(-50%, -50%);
