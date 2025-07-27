@@ -1,3 +1,6 @@
-// You can add custom animations here later if you want!
-// For now it's a placeholder
-console.log("You're amazing. She's lucky to have this site ❤️");
+document.body.addEventListener('click', function () {
+  const audio = document.getElementById('bg-music');
+  if (audio.paused) {
+    audio.play();
+  }
+}, { once: true }); // Ensures music plays only on first click
